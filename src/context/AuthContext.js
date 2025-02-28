@@ -16,8 +16,9 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("token", token);
       setUser(token);
     } catch (error) {
-      console.error("Erro na autenticação:", error.response?.data || error);
-      alert("Erro ao autenticar");
+      //console.error("Erro na autenticação:", error.response?.data || error);
+      //alert("Erro ao autenticar");
+      throw error;
     }
   };
 
