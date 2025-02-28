@@ -6,9 +6,14 @@ const Products = () => {
     const { logout } = useAuth();
     const [products, setProducts] = useState([]);
 
+    const token = localStorage.getItem("token");
+    if (!token) {
+      window.location.href = "/login";
+    }
+
     useEffect(() => {
         const loadProducts = async () => {
-          const data = await fetchProducts();
+          const data = await fetchProducts(token);
           setProducts(data);
         };
         loadProducts();
