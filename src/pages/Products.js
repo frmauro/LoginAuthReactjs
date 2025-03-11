@@ -26,7 +26,7 @@ const Products = () => {
             <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}>{product.name} - ${product.amount}</li>
+                <li key={product.id}>{product.name} - {product.amount}</li>
                 ))}
             </ul>
             <button onClick={logout}>Logout</button>
