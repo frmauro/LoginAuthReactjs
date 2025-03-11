@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetchProducts } from "../services/api";
 import { useAuth } from "../context/AuthContext";
 
+import "./Products.css";
+
 const Products = () => {
     const { logout } = useAuth();
     const [products, setProducts] = useState([]);
@@ -21,10 +23,10 @@ const Products = () => {
 
     return (
         <div>
-            <h1>Lista de Produtos</h1>
+            <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}>{product.name} - ${product.price}</li>
+                <li key={product.id}>{product.name} - ${product.amount}</li>
                 ))}
             </ul>
             <button onClick={logout}>Logout</button>
