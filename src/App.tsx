@@ -9,7 +9,9 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
-const Layout = ({ children }) => (
+import { ReactNode } from "react";
+
+const Layout = ({ children }: { children: ReactNode }) => (
   <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
     <Header />
     <div style={{ display: "flex", flex: 1 }}>

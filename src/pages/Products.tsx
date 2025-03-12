@@ -4,9 +4,15 @@ import { useAuth } from "../context/AuthContext";
 
 import "./Products.css";
 
-const Products = () => {
-    const { logout } = useAuth();
-    const [products, setProducts] = useState([]);
+interface Product {
+  id: number;
+  name: string;
+  amount: number;
+}
+
+const Products: React.FC = () => {
+  const { logout } = useAuth();
+  const [products, setProducts] = useState<Product[]>([]);
 
     const token = localStorage.getItem("token");
     if (!token) {
@@ -15,8 +21,10 @@ const Products = () => {
 
     useEffect(() => {
         const loadProducts = async () => {
-          const data = await fetchProducts(token);
-          setProducts(data);
+          if (token) {
+            const data = await fetchProducts(token);
+            setProducts(data);
+          }
         };
         loadProducts();
       }, []);
