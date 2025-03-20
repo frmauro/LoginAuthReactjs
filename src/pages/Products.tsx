@@ -8,6 +8,7 @@ interface Product {
   id: number;
   name: string;
   amount: number;
+  price: number;
 }
 
 const Products: React.FC = () => {
@@ -22,7 +23,7 @@ const Products: React.FC = () => {
     useEffect(() => {
         const loadProducts = async () => {
           if (token) {
-            const data = await fetchProducts(token);
+            const data  = await fetchProducts(token);
             setProducts(data);
           }
         };
@@ -34,7 +35,7 @@ const Products: React.FC = () => {
             <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}>{product.name} - {product.amount}</li>
+                <li key={product.id}>{product.name} - {product.amount} - R$ {product.price}</li>
                 ))}
             </ul>
             <button onClick={logout}>Logout</button>

@@ -8,6 +8,7 @@ interface Product {
   status: number;
   createdAt?: Date;
   amount: number;
+  price: number;
 }
 
 export const fetchProducts = async (token: string): Promise<Product[]> => {
