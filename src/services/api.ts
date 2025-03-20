@@ -12,7 +12,7 @@ interface Product {
 
 export const fetchProducts = async (token: string): Promise<Product[]> => {
   try {
-    const response = await axios.get<Product[]>("http://productapi_container/api/products", {
+    const response = await axios.get<Product[]>("http://localhost:5002/api/products", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
