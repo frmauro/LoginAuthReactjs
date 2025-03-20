@@ -5,7 +5,7 @@ const Home = () => {
   const { logout } = useAuth();
   return (
     <div>
-      <h1>Bem-vindo!</h1>
+      <h1>Bem-vindo ao Sistema !</h1>
       <button onClick={logout}>Logout</button>
     </div>
   );
