@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { fetchProducts } from "../services/api";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+
 
 import "./Products.css";
 
@@ -30,12 +32,17 @@ const Products: React.FC = () => {
         loadProducts();
       }, []);
 
+ 
     return (
         <div>
             <h1>Products</h1>
             <ul>
                 {products.map((product) => (
-                <li key={product.id}>{product.name} - {product.amount} - R$ {product.price}</li>
+                <li key={product.id}>{product.name} - {product.amount} - R$ {product.price}
+                 <Link to={`/editproduct/${product.id}`}>
+                   <button>Ver Detalhes</button>
+                </Link>
+                </li>
                 ))}
             </ul>
             <button onClick={logout}>Logout</button>

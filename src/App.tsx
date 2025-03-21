@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import EditProduct from "./pages/EditProduct";
 import PrivateRoute from "./components/PrivateRoute";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<PrivateRoute><Layout><Home /></Layout></PrivateRoute>} />
           <Route path="/products" element={<PrivateRoute><Layout><Products /></Layout></PrivateRoute>} />
+          <Route path="/editproduct/:id" element={<PrivateRoute><Layout><EditProduct /></Layout></PrivateRoute>} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
