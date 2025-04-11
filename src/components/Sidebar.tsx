@@ -6,7 +6,6 @@ const Sidebar = () => (
     <ul style={{ listStyle: "none", padding: 0 }}>
       <li><Link to="/home">Home</Link></li>
       <li><Link to="/products">Products</Link></li>
-      <li><Link to="/login">Login</Link></li>
     </ul>
   </nav>
 );
