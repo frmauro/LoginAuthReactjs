@@ -11,6 +11,7 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
 import { ReactNode } from "react";
+import ProductDetails from "./pages/ProductDetails";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/home" element={<PrivateRoute><Layout><Home /></Layout></PrivateRoute>} />
           <Route path="/products" element={<PrivateRoute><Layout><Products /></Layout></PrivateRoute>} />
           <Route path="/editproduct/:id" element={<PrivateRoute><Layout><EditProduct /></Layout></PrivateRoute>} />
+          <Route path="/productdetails/:id" element={<PrivateRoute><Layout><ProductDetails /></Layout></PrivateRoute>} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>

@@ -40,7 +40,12 @@ const Products: React.FC = () => {
                 {products.map((product) => (
                 <li key={product.id}>{product.name} - {product.amount} - R$ {product.price}
                  <Link to={`/editproduct/${product.id}`}>
-                   <button>Ver Detalhes</button>
+                   <button>Editar</button>
+                </Link>
+                 <Link to={`/productdetails/${product.id}`}
+                  state={{ product }}
+                >
+                  <button>Ver Detalhes</button>
                 </Link>
                 </li>
                 ))}

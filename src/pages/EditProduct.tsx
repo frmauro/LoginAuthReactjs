@@ -22,6 +22,8 @@ const onSave = async (updatedProduct: Product | null) => {
   if (updatedProduct) {
     if (token) {
       await updateProduct(updatedProduct, token);
+      window.location.href = "/products";
+      return;
     } else {
       console.error("Token is null");
     }
@@ -84,7 +86,7 @@ const EditProduct: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name:
+        Name: 
         <input
           type="text"
           name="name"
